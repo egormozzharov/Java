@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/BucketsBroject.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/controller/Controller.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/view/TheView.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/decorate/Decoration.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Flower.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Rose.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Tulip.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/builder/BouquetBuilder.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/decorate/Wrapping.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/decorate/Ribbon.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/Bouquet.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Pansy.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Dalia.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/entity/flower/Astra.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/builder/SummerBouquetBuilder.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/builder/SpringBouquetBuilder.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/builder/Director.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/FlowerCreator.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/AstraCreator.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/DaliaCreator.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/PansyCreator.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/RoseCreator.java</file>
+            <file>file:/C:/Users/Egor/Desktop/Java/Buikets_combine/src/bl/factory/flower/TulipCreator.java</file>
+        </group>
+    </open-files>
+</project-private>
