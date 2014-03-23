@@ -14,8 +14,20 @@ import entity.decorate.Decoration;
  */
 public class Ribbon extends Decoration {
     
+    private int length;
+    
     public Ribbon() {
-        this.name = "Ribbon";
     }
+    
+    public int getLength() {
+        return this.length;
+    }
+    
+    public void setLength(int length) {
+        this.length = length;
+    }
+    
+
+
     
 }

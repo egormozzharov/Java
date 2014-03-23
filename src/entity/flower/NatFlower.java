@@ -10,10 +10,16 @@ package entity.flower;
  *
  * @author Egor
  */
-public class Dalia extends Flower {
+public class NatFlower {
     
-    public Dalia() {
-        this.name = "Dalia";
+    private int expirationDays;
+    
+    public void setExpirationDays(int days) {
+        expirationDays = days;
+    }
+    
+    public int getDangerous() {
+        return expirationDays;
     }
     
 }

@@ -4,16 +4,22 @@
  * and open the template in the editor.
  */
 
-package bl.factory.flower;
-
-import entity.flower.Flower;
+package entity.flower;
 
 /**
  *
  * @author Egor
  */
-public abstract class FlowerCreator {
+public class ArtFlower {
+ 
+    private boolean toxic;
     
-    public abstract Flower factoryMethod();
+    public void setToxic(boolean t) {
+        toxic = t;
+    }
+    
+    public boolean getToxic() {
+        return toxic;
+    }
     
 }

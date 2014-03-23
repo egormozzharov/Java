@@ -7,6 +7,9 @@
 package bl.builder;
 
 import entity.Bouquet;
+import entity.decorate.Decoration;
+import entity.flower.Flower;
+import java.util.List;
 
 /**
  *
@@ -24,8 +27,12 @@ public abstract class BouquetBuilder {
         this.bouquet = new Bouquet();
     }
     
-    public abstract void buildFlowers();
+    public void buildFlowers(List<Flower> list) {
+        bouquet.setFlowers(list);
+    }
     
-    public abstract void buildDecorations();
+    public void buildDecorations(List<Decoration> list) {
+        bouquet.setDecoration(list);
+    }
     
 }

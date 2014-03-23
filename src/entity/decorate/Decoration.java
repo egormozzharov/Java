@@ -12,10 +12,14 @@ package entity.decorate;
  */
 public abstract class Decoration {
     
-    protected String name;
+    protected String name = "Decoration";
     
     public String getName() {
         return this.name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
     }
     
 }

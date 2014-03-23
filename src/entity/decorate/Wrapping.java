@@ -14,8 +14,17 @@ import entity.decorate.Decoration;
  */
 public class Wrapping extends Decoration {
     
+    private int square;
+    
     public Wrapping() {
         this.name = "Wrapping";
     }
     
+    public int getSquare() {
+        return this.square;
+    }
+    
+    public void setSquare(int square) {
+        this.square = square;
+    }
 }
