@@ -10,7 +10,7 @@ package bl.to;
  *
  * @author Egor
  */
-public class IParams {
+public class Params {
     
     private String name;
     

@@ -1,11 +1,14 @@
 package controller;
 
-import bl.builder.BouquetBuilder;
-import bl.builder.Director;
-import entity.Bouquet;
-import java.util.ArrayList;
+import bl.factory.flower.ArtCreator;
+import bl.factory.flower.FlowerCreator;
+import bl.factory.flower.NatCreator;
+import bl.to.ArtParams;
+import bl.to.NatParams;
+import bl.to.TO;
+import entity.decorate.Decoration;
+import entity.flower.Flower;
 import java.util.HashMap;
-import java.util.List;
 import view.TheView;
 
 
@@ -18,7 +21,9 @@ public class Controller {
     private static Controller instance;
     
 //    private List<String> viewCommands = new ArrayList<>();
-    private HashMap<String, BouquetBuilder> map = new HashMap<>();
+    private HashMap<String, FlowerCreator> flowerMap = new HashMap<>();
+    
+    private HashMap<String, DecorationCreator> dMap = new HashMap<>();
     
     public static Controller getInstance() {
         if (null == instance) {
@@ -28,8 +33,17 @@ public class Controller {
     }  
     
     private Controller() {
-//        viewCommands.add("SpringBouquet");
-//        viewCommands.add("SummerBouquet");
+        NatParams nParams = new NatParams();
+        nParams.setName("Роза нутаральная");
+        nParams.setExpirationDays(10);
+        flowerMap.put(nParams.getName(), new NatCreator(nParams));
+        
+        ArtParams aParams = new ArtParams();
+        aParams.setName("Роза искусственная");
+        aParams.setToxic(true);
+        flowerMap.put(aParams.getName(), new ArtCreator(aParams));
+        
+        
     }
     
     public void getInputFromView(String command) {

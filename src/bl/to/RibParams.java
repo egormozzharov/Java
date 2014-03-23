@@ -10,23 +10,23 @@ package bl.to;
  *
  * @author Egor
  */
-public class ArtParams extends Params {
+public class RibParams extends Params {
     
-    private boolean toxic;
+    private int length;
     
-    public ArtParams(boolean t) {
-        toxic = t;
+    public RibParams(int l) {
+        length = l;
     }
     
-    public ArtParams() {
+    public RibParams() {
     }
     
-    public boolean getToxic() {
-        return toxic;
+    public int getLength() {
+        return length;
     }
     
-    public void setToxic(boolean t) {
-        toxic = t;
+    public void setLength(int l) {
+        length = l;
     }
     
 }

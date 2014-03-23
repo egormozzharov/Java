@@ -10,23 +10,23 @@ package bl.to;
  *
  * @author Egor
  */
-public class ArtParams extends Params {
+public class WrapParams extends Params {
     
-    private boolean toxic;
+    private int square;
     
-    public ArtParams(boolean t) {
-        toxic = t;
+    public WrapParams(int s) {
+        square = s;
     }
     
-    public ArtParams() {
+    public WrapParams() {
     }
     
-    public boolean getToxic() {
-        return toxic;
+    public int getSquare() {
+        return square;
     }
     
-    public void setToxic(boolean t) {
-        toxic = t;
+    public void setSquare(int s) {
+        square = s;
     }
     
 }

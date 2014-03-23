@@ -6,7 +6,7 @@
 
 package bl.factory.flower;
 
-import bl.to.IParams;
+import bl.to.Params;
 import bl.to.NatParams;
 import entity.flower.Flower;
 import entity.flower.NatFlower;
@@ -16,11 +16,16 @@ import entity.flower.NatFlower;
  * @author Egor
  */
 public class NatCreator extends FlowerCreator {
+
+    public NatCreator(Params p) {
+        super(p);
+    }
+    
     
     @Override
-    public Flower factoryMethod(IParams p) {
+    public Flower factoryMethod() {
         NatFlower flower = new NatFlower();
-        NatParams params = (NatParams)p;
+        NatParams params = (NatParams)parameters;
         flower.setExpirationDays(params.getExpirationDays());
         flower.setName(params.getName());        
         return flower;

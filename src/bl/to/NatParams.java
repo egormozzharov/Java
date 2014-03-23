@@ -10,9 +10,16 @@ package bl.to;
  *
  * @author Egor
  */
-public class NatParams implements IParams {
+public class NatParams extends Params {
     
     private int expirationDays;
+    
+    public NatParams(int days) {
+        expirationDays = days;
+    }
+    
+    public NatParams() {
+    }
     
     public int getExpirationDays() {
         return expirationDays;

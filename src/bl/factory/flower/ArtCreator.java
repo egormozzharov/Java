@@ -7,7 +7,7 @@
 package bl.factory.flower;
 
 import bl.to.ArtParams;
-import bl.to.IParams;
+import bl.to.Params;
 import bl.to.NatParams;
 import entity.flower.ArtFlower;
 import entity.flower.Flower;
@@ -19,10 +19,14 @@ import entity.flower.NatFlower;
  */
 public class ArtCreator extends FlowerCreator {
     
+    public ArtCreator(Params p) {
+        super(p);
+    }
+    
     @Override
-    public Flower factoryMethod(IParams p) {
+    public Flower factoryMethod() {
         ArtFlower flower = new ArtFlower();
-        ArtParams params = (ArtParams)p;
+        ArtParams params = (ArtParams)parameters;
         flower.setName(params.getName());
         flower.setToxic(params.getToxic());
         return flower;

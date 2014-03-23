@@ -4,23 +4,23 @@
  * and open the template in the editor.
  */
 
-package bl.factory.flower;
+package bl.factory.decoration;
 
 import bl.to.Params;
-import entity.flower.Flower;
+import entity.decorate.Decoration;
 
 /**
  *
  * @author Egor
  */
-public abstract class FlowerCreator {
+public abstract class DecorCreator {
     
-    public FlowerCreator(Params p) {
+    public DecorCreator(Params p) {
         parameters = p;
     }
     
     protected Params parameters;
     
-    public abstract Flower factoryMethod();
+    public abstract Decoration factoryMethod();
     
 }

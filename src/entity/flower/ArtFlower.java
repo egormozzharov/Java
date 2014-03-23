@@ -22,6 +22,8 @@ public class ArtFlower extends Flower {
         return toxic;
     }
     
+    
+    @Override
     public String getInfo() {
         String str = name + " " + "is toxic = " + toxic;
         return str;
