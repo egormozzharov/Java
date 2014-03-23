@@ -4,27 +4,22 @@
  * and open the template in the editor.
  */
 
-package entity.flower;
+package bl.to;
 
 /**
  *
  * @author Egor
  */
-public class ArtFlower extends Flower {
- 
-    private boolean toxic;
+public class ArtParams extends IParams {
     
-    public void setToxic(boolean t) {
-        toxic = t;
-    }
+    private boolean toxic;
     
     public boolean getToxic() {
         return toxic;
     }
     
-    public String getInfo() {
-        String str = name + " " + "is toxic = " + toxic;
-        return str;
+    public void setToxic(boolean t) {
+        toxic = t;
     }
     
 }

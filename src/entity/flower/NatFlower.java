@@ -10,7 +10,7 @@ package entity.flower;
  *
  * @author Egor
  */
-public class NatFlower {
+public class NatFlower extends Flower {
     
     private int expirationDays;
     
@@ -22,4 +22,9 @@ public class NatFlower {
         return expirationDays;
     }
     
+    @Override
+    public String getInfo() {
+        String str = name + " " + "expiraion days = " + expirationDays;
+        return str;
+    }
 }

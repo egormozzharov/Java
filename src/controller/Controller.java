@@ -33,6 +33,8 @@ public class Controller {
     }
     
     public void getInputFromView(String command) {
+        
+        TO to = view.userInput(5);
 //        if (true == map.containsKey(command)) {
 //              BouquetBuilder builder = map.get(command);
 //              Director director = new Director();

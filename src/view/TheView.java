@@ -18,14 +18,13 @@ public class TheView {
     
     /**
      * Method emulates user's input
-     * @param amountOfThreasures
      */
     public TO userInput(int amount) {
         TO to = new TO();
         
         List<String> flowers = new ArrayList<>();
-        flowers.add("Роза");
-        flowers.add("Роза");
+        flowers.add("Роза натуральная");
+        flowers.add("Роза натуральная");
         flowers.add("Роза искусственная");
         
         List<String> decorations = new ArrayList<>();

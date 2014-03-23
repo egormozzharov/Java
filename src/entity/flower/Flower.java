@@ -22,6 +22,11 @@ public abstract class Flower {
         this.name = name;
     }
     
+    public String getInfo() {
+        String str = name.toString();
+        return str;
+    }
+    
     @Override
     public String toString() {
         return this.name;
