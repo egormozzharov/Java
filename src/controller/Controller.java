@@ -2,8 +2,6 @@ package controller;
 
 import bl.builder.BouquetBuilder;
 import bl.builder.Director;
-import bl.builder.SpringBouquetBuilder;
-import bl.builder.SummerBouquetBuilder;
 import entity.Bouquet;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,22 +30,20 @@ public class Controller {
     private Controller() {
 //        viewCommands.add("SpringBouquet");
 //        viewCommands.add("SummerBouquet");
-        map.put("SpringBouquet", new SpringBouquetBuilder());
-        map.put("SummerBouquet", new SummerBouquetBuilder());
     }
     
-    public void executeFromView(String command) {
-        if (true == map.containsKey(command)) {
-              BouquetBuilder builder = map.get(command);
-              Director director = new Director();
-              director.setBouquetBuilder(builder);
-              director.constructBouquet();
-              Bouquet bouquet = director.getBouquet();
-              view.printMessage(bouquet.getBouquetInfo());
-        } 
-        else {
-            view.printMessage("UncorrectCommand!");
-        }
+    public void getInputFromView(String command) {
+//        if (true == map.containsKey(command)) {
+//              BouquetBuilder builder = map.get(command);
+//              Director director = new Director();
+//              director.setBouquetBuilder(builder);
+//              director.constructBouquet();
+//              Bouquet bouquet = director.getBouquet();
+//              view.printMessage(bouquet.getBouquetInfo());
+//        } 
+//        else {
+//            view.printMessage("UncorrectCommand!");
+//        }
     }
     
     

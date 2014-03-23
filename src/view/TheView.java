@@ -1,5 +1,6 @@
 package view;
 
+import bl.to.TO;
 import controller.Controller;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,22 @@ public class TheView {
      * Method emulates user's input
      * @param amountOfThreasures
      */
-    public void userInput(int amount) {
-            controller.executeFromView("SpringBouquet");    
-            controller.executeFromView("SummerBouquet");
+    public TO userInput(int amount) {
+        TO to = new TO();
+        
+        List<String> flowers = new ArrayList<>();
+        flowers.add("Роза");
+        flowers.add("Роза");
+        flowers.add("Роза искусственная");
+        
+        List<String> decorations = new ArrayList<>();
+        decorations.add("Лента стандартная");
+        decorations.add("Обертка стандартная");
+        
+        to.setDecorations(decorations);
+        to.setFlowers(flowers);
+        
+        return to;
     }
     
     /**
