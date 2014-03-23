@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Egor
  */
-public abstract class BouquetBuilder {
+public class BouquetBuilder {
     
     protected Bouquet bouquet;
     

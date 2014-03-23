@@ -1,14 +1,21 @@
 package controller;
 
+import bl.builder.BouquetBuilder;
+import bl.builder.Director;
+import bl.factory.decoration.DecorCreator;
+import bl.factory.decoration.RibCreator;
+import bl.factory.decoration.WrapCreator;
 import bl.factory.flower.ArtCreator;
 import bl.factory.flower.FlowerCreator;
 import bl.factory.flower.NatCreator;
 import bl.to.ArtParams;
 import bl.to.NatParams;
+import bl.to.RibParams;
 import bl.to.TO;
-import entity.decorate.Decoration;
-import entity.flower.Flower;
+import bl.to.WrapParams;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import view.TheView;
 
 
@@ -20,10 +27,9 @@ public class Controller {
     
     private static Controller instance;
     
-//    private List<String> viewCommands = new ArrayList<>();
     private HashMap<String, FlowerCreator> flowerMap = new HashMap<>();
     
-    private HashMap<String, DecorationCreator> dMap = new HashMap<>();
+    private HashMap<String, DecorCreator> dMap = new HashMap<>();
     
     public static Controller getInstance() {
         if (null == instance) {
@@ -43,12 +49,54 @@ public class Controller {
         aParams.setToxic(true);
         flowerMap.put(aParams.getName(), new ArtCreator(aParams));
         
+        RibParams rParams = new RibParams();
+        rParams.setName("Лента стандартная");
+        rParams.setLength(10);
+        dMap.put(rParams.getName(), new RibCreator(rParams));
+        
+        WrapParams wParams = new WrapParams();
+        wParams.setName("Обертка стандартная");
+        wParams.setSquare(10);
+        dMap.put(wParams.getName(), new WrapCreator(wParams));
+        
         
     }
     
     public void getInputFromView(String command) {
         
         TO to = view.userInput(5);
+        
+        
+       // validation
+        boolean correct = true;
+        BouquetBuilder builder = new BouquetBuilder();
+        List<String> flowers = to.getFlowers();
+        
+        List<String> createFlowers = new ArrayList<>();
+        for (String currFlower : flowers) {
+            if (true == flowerMap.containsKey(currFlower)) {
+                createFlowers.add(currFlower);
+            }else {
+                view.printMessage("error!" + currFlower + " is not defined");
+            }
+        }
+        
+        List<String> decoration = to.getDecorations();
+        List<String> createDecoration = new ArrayList<>();
+        for (String currDec : decoration) {
+            if (true == dMap.containsKey(currDec)) {
+                createDecoration.add(currDec);
+            }else {
+                view.printMessage("error!" + currDec + " is not defined");
+            }
+        }
+        
+        BouquetBuilder builder1 = new BouquetBuilder();
+        Director director = new Director();
+        director.setBouquetBuilder(builder);
+        director.constructBouquet();
+        director.getBouquet();
+        
 //        if (true == map.containsKey(command)) {
 //              BouquetBuilder builder = map.get(command);
 //              Director director = new Director();
