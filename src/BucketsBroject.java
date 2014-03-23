@@ -18,7 +18,8 @@ public class BucketsBroject {
      */
     public static void main(String[] args) {        
         Controller controller = Controller.getInstance();
-        controller.run();       
+        controller.run();
+        //controller.run();       
         
 //        Director director = new Director();
 //        director.setBouquetBuilder(new SpringBouquetBuilder());

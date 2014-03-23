@@ -13,6 +13,9 @@ import bl.to.NatParams;
 import bl.to.RibParams;
 import bl.to.TO;
 import bl.to.WrapParams;
+import entity.Bouquet;
+import entity.decorate.Decoration;
+import entity.flower.Flower;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +43,7 @@ public class Controller {
     
     private Controller() {
         NatParams nParams = new NatParams();
-        nParams.setName("Роза нутаральная");
+        nParams.setName("Роза натуральная");
         nParams.setExpirationDays(10);
         flowerMap.put(nParams.getName(), new NatCreator(nParams));
         
@@ -62,58 +65,47 @@ public class Controller {
         
     }
     
-    public void getInputFromView(String command) {
+    private void getInputFromView() {
         
         TO to = view.userInput(5);
         
         
        // validation
-        boolean correct = true;
-        BouquetBuilder builder = new BouquetBuilder();
-        List<String> flowers = to.getFlowers();
-        
-        List<String> createFlowers = new ArrayList<>();
+        List<String> flowers = to.getFlowers();        
+        List<Flower> createFlowers = new ArrayList<>();
         for (String currFlower : flowers) {
             if (true == flowerMap.containsKey(currFlower)) {
-                createFlowers.add(currFlower);
+                FlowerCreator flowerCreator = flowerMap.get(currFlower);
+                createFlowers.add(flowerCreator.factoryMethod());
             }else {
                 view.printMessage("error!" + currFlower + " is not defined");
             }
         }
         
         List<String> decoration = to.getDecorations();
-        List<String> createDecoration = new ArrayList<>();
+        List<Decoration> createDecoration = new ArrayList<>();
         for (String currDec : decoration) {
             if (true == dMap.containsKey(currDec)) {
-                createDecoration.add(currDec);
+                DecorCreator decorCreator = dMap.get(currDec);
+                createDecoration.add(decorCreator.factoryMethod());
             }else {
                 view.printMessage("error!" + currDec + " is not defined");
             }
         }
         
-        BouquetBuilder builder1 = new BouquetBuilder();
+        BouquetBuilder builder = new BouquetBuilder(createFlowers,
+                                                    createDecoration);
         Director director = new Director();
         director.setBouquetBuilder(builder);
         director.constructBouquet();
-        director.getBouquet();
-        
-//        if (true == map.containsKey(command)) {
-//              BouquetBuilder builder = map.get(command);
-//              Director director = new Director();
-//              director.setBouquetBuilder(builder);
-//              director.constructBouquet();
-//              Bouquet bouquet = director.getBouquet();
-//              view.printMessage(bouquet.getBouquetInfo());
-//        } 
-//        else {
-//            view.printMessage("UncorrectCommand!");
-//        }
+        Bouquet bouquet = director.getBouquet();
+        view.printMessage(bouquet.getBouquetInfo());
     }
     
     
     public void run () {
         view = new TheView();
-        view.userInput(2);
+        getInputFromView();
     }    
     
 }

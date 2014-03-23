@@ -17,7 +17,16 @@ import java.util.List;
  */
 public class BouquetBuilder {
     
+    private List<Flower> flowers;
+    
+    private List<Decoration> decorations;
+    
     protected Bouquet bouquet;
+    
+    public BouquetBuilder(List<Flower> f, List<Decoration> d) {
+        flowers = f;
+        decorations = d;
+    }
     
     public Bouquet getBouquet() {
         return this.bouquet;
@@ -27,12 +36,12 @@ public class BouquetBuilder {
         this.bouquet = new Bouquet();
     }
     
-    public void buildFlowers(List<Flower> list) {
-        bouquet.setFlowers(list);
+    public void buildFlowers() {
+        bouquet.setFlowers(flowers);
     }
     
-    public void buildDecorations(List<Decoration> list) {
-        bouquet.setDecoration(list);
+    public void buildDecorations() {
+        bouquet.setDecoration(decorations);
     }
     
 }
